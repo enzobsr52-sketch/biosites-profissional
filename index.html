@@ -7,212 +7,185 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-    --primary: #00f2ff;
-    --accent: #7000ff;
-    --bg: #0b0b0b;
-    --glass: rgba(255,255,255,0.05);
-    --border: rgba(255,255,255,0.1);
+  --primary: #00f2ff;
+  --accent: #7000ff;
+  --bg: #000;
+  --glass: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.1);
 }
+
 * { margin:0; padding:0; box-sizing:border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 body { background: var(--bg); color: #fff; overflow-x: hidden; scroll-behavior: smooth; }
 
-/* FUNDO COM PARTICULAS */
-.particles {
-    position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;
-    background: radial-gradient(circle at top, #0a2cff 0%, #020617 100%);
-    overflow:hidden;
-}
-.particle {
-    position: absolute; width: 12px; height: 12px; background: rgba(255,255,255,0.15);
-    border-radius: 50%; animation: float 25s linear infinite;
-}
-@keyframes float {
-    0% { transform: translateY(110vh) scale(0); }
-    100% { transform: translateY(-10vh) scale(1); }
-}
-
-/* HERO */
+/* HERO SECTION */
 .hero {
-    height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-    padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
+
 .hero h1 {
-    font-size: clamp(3rem, 10vw, 6rem); font-weight: 800; letter-spacing: -3px; line-height: 1;
-    background: linear-gradient(90deg, #fff, var(--primary), #fff); background-size: 200% auto;
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    animation: shine 3s linear infinite;
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fff, var(--primary), #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
 }
+
 .hero p {
-    margin-top: 20px; font-size: 1.2rem; max-width: 600px; opacity:0;
-    animation: fadeIn 1.2s forwards 0.5s;
-}
-.hero .cta {
-    margin-top: 40px;
-}
-.hero .cta a {
-    display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #00f2ff, #7000ff);
-    color:#020617; font-weight:800; border-radius:50px; text-decoration:none; font-size:1.1rem;
-    transition: transform .3s, box-shadow .3s;
-}
-.hero .cta a:hover { transform: scale(1.1); box-shadow: 0 0 40px var(--primary); }
-
-/* SEÇÃO SOBRE */
-.about {
-    padding: 100px 20px; max-width: 1200px; margin:auto;
-}
-.about h2 {
-    font-size:2.5rem; text-align:center; margin-bottom:50px; font-weight:800;
-}
-.about p {
-    font-size:1.1rem; line-height:2; opacity:0.85; margin-bottom:40px; max-width:900px; margin-left:auto; margin-right:auto;
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  margin-bottom: 30px;
 }
 
-/* CARDS DE SERVIÇO */
-.grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap:40px; }
+.btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: var(--primary);
+  color: #020617;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary); }
+
+/* SECTIONS */
+section { max-width: 1200px; margin: auto; padding: 100px 20px; }
+.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; font-weight: 800; }
+
+/* CARDS COM IMAGENS */
+.grid { display: grid; grid-template-columns: 1fr; gap: 50px; }
+
 .card {
-    background: var(--glass); border:1px solid var(--border); padding:30px; border-radius:30px;
-    backdrop-filter: blur(20px); transition:0.5s; position:relative; overflow:hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  transition: transform 0.5s, box-shadow 0.5s;
 }
-.card:hover { transform: translateY(-15px) scale(1.02); border-color: var(--primary); box-shadow: 0 20px 60px rgba(0,242,255,0.1);}
-.card img { width:100%; border-radius:20px; margin-bottom:20px; }
-.card h3 { font-size:1.8rem; margin-bottom:10px; color: var(--primary);}
-.card p { font-size:1rem; line-height:1.8; opacity:0.85; }
-.card ul { list-style: none; margin-top:15px; padding-left:0; opacity:0.8; line-height:1.6; }
-.card ul li::before { content:'✓'; color: var(--primary); margin-right:10px; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,242,255,0.2); }
 
-/* BOTÕES */
-.btn { display:inline-block; padding:14px 35px; font-weight:800; text-decoration:none; border-radius:100px; text-transform:uppercase; letter-spacing:1px; transition:0.4s; box-shadow:0 10px 20px rgba(255,255,255,0.1);}
-.btn-primary { background: linear-gradient(135deg,#00f2ff,#7000ff); color:#020617;}
-.btn-primary:hover { transform:scale(1.1); box-shadow:0 0 40px var(--primary);}
-.btn-secondary { background:#fff; color:#000;}
-.btn-secondary:hover { transform:scale(1.1); box-shadow:0 0 40px var(--primary);}
+.card img { width: 100%; height: auto; object-fit: cover; }
+.card-content { padding: 30px; }
+.card-content h3 { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
+.card-content p { font-size: 1rem; line-height: 1.8; opacity: 0.8; }
 
-/* FOOTER */
-footer { padding:80px 20px; text-align:center; border-top:1px solid var(--border); background:linear-gradient(to bottom,transparent,#050505);}
-footer .rights { opacity:0.3; font-size:0.75rem; letter-spacing:4px; text-transform:uppercase; }
+/* PLANOS */
+.planos .card-content { text-align: center; }
+.price { font-size: 2rem; color: var(--primary); font-weight: 800; margin: 15px 0; }
 
-/* ANIMAÇÕES */
+/* RODAPÉ */
+footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--border); color: rgba(255,255,255,0.5); font-size: 0.8rem; }
+
+/* RESPONSIVO */
+@media(min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media(min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ANIMAÇÃO TEXTOS */
 @keyframes shine { to { background-position: 200% center; } }
-@keyframes fadeIn { to { opacity:1; } }
 
-@media (max-width:768px){ .hero h1{font-size:4rem;} }
 </style>
 </head>
 <body>
 
-<div class="particles" id="particles"></div>
-
-<!-- HERO -->
 <div class="hero">
-    <h1>bio <span>sites.profissional</span></h1>
-    <p>Transformamos negócios digitais em marcas memoráveis. Criamos Bio Sites, Sites Profissionais e realizamos edição de vídeos para redes sociais sem necessidade de gravação presencial, trazendo resultados reais.</p>
-    <div class="cta">
-        <a href="https://wa.me/5561996213467" class="btn btn-primary">Fale comigo no WhatsApp</a>
-    </div>
+  <h1>bio sites.<span>profissional</span></h1>
+  <p>Transformamos pequenas empresas em grandes marcas digitais com Bio Sites, Sites Profissionais, Edição de Vídeo e Estratégia Digital. Não gravamos no local, mas garantimos resultados.</p>
+  <a href="https://wa.me/5561996213467" class="btn">Fale comigo no WhatsApp</a>
 </div>
 
-<!-- SOBRE -->
-<section class="about">
-    <h2>Sobre <span>Nosso Trabalho</span></h2>
-    <p>Na <strong>bio sites.profissional</strong> entregamos soluções digitais completas. Desenvolvemos Bio Sites modernos, Sites Profissionais de alto padrão e fazemos edição de vídeo estratégica, garantindo que cada projeto gere resultado para seu negócio. Não gravamos no local, mas nosso trabalho é totalmente remoto e profissional, trazendo resultados tangíveis e visuais premium.</p>
+<section id="sobre">
+  <h2 class="section-title">Sobre <span>BIO SITES PROFISSIONAL</span></h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581090700227-32cb3c95aa9b?auto=format&fit=crop&w=800&q=80" alt="Bio Site">
+      <div class="card-content">
+        <h3>Bio Sites</h3>
+        <p>Links inteligentes e bio sites de alta conversão, organizando todas suas redes em um só lugar e transformando seguidores em clientes.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1612832020926-83d3c0382f31?auto=format&fit=crop&w=800&q=80" alt="Sites Profissionais">
+      <div class="card-content">
+        <h3>Sites Profissionais</h3>
+        <p>Desenvolvemos sites institucionais e comerciais, responsivos, animados e focados em conversão. Seu negócio passa a parecer grande desde o primeiro clique.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1603415526960-f8f4fc1dbccf?auto=format&fit=crop&w=800&q=80" alt="Vídeo Maker">
+      <div class="card-content">
+        <h3>Vídeo Maker</h3>
+        <p>Produzimos vídeos impactantes e criativos, prontos para redes sociais. Não gravamos no local, mas entregamos conteúdo premium que gera resultados.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80" alt="Consultoria Digital">
+      <div class="card-content">
+        <h3>Consultoria Digital</h3>
+        <p>Estratégias personalizadas para posicionamento digital, branding e marketing orgânico, ajudando sua marca a crescer de forma sólida.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- PLANOS -->
 <section id="planos">
-<h2 class="section-title">Planos e Serviços</h2>
-<div class="grid">
+  <h2 class="section-title">Planos e <span>Investimento</span></h2>
+  <div class="grid planos">
     <div class="card">
-        <img src="https://images.unsplash.com/photo-1581091870621-0e1e06b1f802?auto=format&fit=crop&w=800&q=80" alt="Bio Site Essencial">
+      <div class="card-content">
         <h3>Plano Simples</h3>
-        <p>Bio Site de alta conversão, ideal para startups e perfis pessoais que querem destaque online.</p>
+        <div class="price">R$ 800</div>
         <ul>
-            <li>Bio Site Inteligente</li>
-            <li>Animações de Entrada</li>
-            <li>Link Único Bio</li>
-            <li>Suporte Rápido</li>
+          <li>✓ Bio Site de Alta Conversão</li>
+          <li>✓ Layout Premium</li>
+          <li>✓ Suporte Básico</li>
         </ul>
-        <a href="https://wa.me/5561996213467" class="btn btn-primary">R$ 800 - Selecionar</a>
+        <a href="https://wa.me/5561996213467" class="btn">Selecionar</a>
+      </div>
     </div>
-
     <div class="card">
-        <img src="https://images.unsplash.com/photo-1581091215364-bd91fbe1c3e0?auto=format&fit=crop&w=800&q=80" alt="Site Profissional Premium">
+      <div class="card-content">
         <h3>Plano Médio</h3>
-        <p>Site Profissional completo, incluindo animações avançadas e edição de vídeos para redes sociais.</p>
+        <div class="price">R$ 1.500</div>
         <ul>
-            <li>Site Institucional Completo</li>
-            <li>Animações Avançadas</li>
-            <li>Vídeo Maker Incluso (2 Reels)</li>
-            <li>Domínio Personalizado</li>
+          <li>✓ Bio Site + Site Profissional</li>
+          <li>✓ Animações Avançadas</li>
+          <li>✓ Suporte Prioritário</li>
         </ul>
-        <a href="https://wa.me/5561996213467" class="btn btn-primary">R$ 1.500 - Selecionar</a>
+        <a href="https://wa.me/5561996213467" class="btn">Selecionar</a>
+      </div>
     </div>
-
     <div class="card">
-        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="Profissional">
+      <div class="card-content">
         <h3>Plano Profissional</h3>
-        <p>Experiência digital premium, integração de branding, design 3D, consultoria de posicionamento e resultado garantido.</p>
+        <div class="price">R$ 2.000</div>
         <ul>
-            <li>Branding Completo</li>
-            <li>Web 3D Imersiva</li>
-            <li>Posicionamento Digital</li>
-            <li>Consultoria de Marca</li>
+          <li>✓ Site Completo + Vídeo Maker</li>
+          <li>✓ Animações Premium</li>
+          <li>✓ Consultoria Digital</li>
         </ul>
-        <a href="https://wa.me/5561996213467" class="btn btn-primary">R$ 2.000 - Selecionar</a>
+        <a href="https://wa.me/5561996213467" class="btn">Selecionar</a>
+      </div>
     </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" alt="Consultoria Premium">
-        <h3>Plano Exclusivo</h3>
-        <p>Consultoria personalizada e estratégica para marcas que querem ser líderes no mercado digital.</p>
-        <ul>
-            <li>Consultoria Premium</li>
-            <li>Design Estratégico</li>
-            <li>Planejamento de Conteúdo</li>
-            <li>Resultados Garantidos</li>
-        </ul>
-        <a href="https://wa.me/5561996213467" class="btn btn-primary">Sob Consulta</a>
-    </div>
-</div>
+  </div>
 </section>
 
 <footer>
-    <div class="rights">
-        CRIADO EM 2026 • <strong>BIO SITES.PROFISSIONAL</strong> • TODOS OS DIREITOS RESERVADOS
-    </div>
-    <p>Siga no Instagram: <a href="https://www.instagram.com/biosites.profissional?igsh=MWxtbTN4OWJxZXgwbg==" target="_blank" style="color: var(--primary);">biosites.profissional</a></p>
+  © 2026 • <strong>BIO SITES PROFISSIONAL</strong> • TODOS OS DIREITOS RESERVADOS • <a href="https://www.instagram.com/biosites.profissional?igsh=MWxtbTN4OWJxZXgwbg==" target="_blank" style="color: var(--primary); text-decoration:none;">Instagram</a>
 </footer>
-
-<script>
-// PARTICULAS ALEATORIAS
-const particlesContainer = document.getElementById('particles');
-for(let i=0;i<50;i++){
-    const p = document.createElement('div');
-    p.classList.add('particle');
-    p.style.left = Math.random()*100 + '%';
-    p.style.top = Math.random()*100 + '%';
-    p.style.width = 5+Math.random()*15 + 'px';
-    p.style.height = p.style.width;
-    p.style.animationDuration = 15+Math.random()*20 + 's';
-    particlesContainer.appendChild(p);
-}
-
-// APARECER CARDS AO SCROLL
-const cards = document.querySelectorAll('.card');
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.style.opacity=1;
-            entry.target.style.transform='translateY(0)';
-        }
-    });
-},{threshold:0.1});
-cards.forEach(card=>{
-    card.style.opacity=0;
-    card.style.transform='translateY(50px)';
-    card.style.transition='1s cubic-bezier(0.16, 1, 0.3, 1)';
-    observer.observe(card);
-});
-</script>
 
 </body>
 </html>
