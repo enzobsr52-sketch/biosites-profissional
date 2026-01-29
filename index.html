@@ -3,27 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biosites Profissional • Digital Premium</title>
+<title>Biosites Profissional • Transformando marcas</title>
 
 <!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
-body { background:#020617; color:#fff; overflow-x:hidden; }
-
-/* ===== FUNDO DE PARTÍCULAS ===== */
-#particles { position:fixed; width:100%; height:100%; z-index:0; top:0; left:0; }
-.particle { position:absolute; border-radius:50%; background:rgba(0,229,255,0.2); width:15px; height:15px; animation:float 25s linear infinite; }
-@keyframes float { 0% { transform:translateY(110vh) scale(0); } 100% { transform:translateY(-10vh) scale(1); } }
+body { background:#020617; color:#fff; overflow-x:hidden; line-height:1.6; }
 
 /* ===== HERO ===== */
-.hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:100px 20px; position:relative; z-index:1; }
+.hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:100px 20px; position:relative; z-index:1; }
 .hero img { width:200px; animation:pulse 3s infinite; }
 @keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.07);}}
 .hero h1 { font-size:clamp(3rem,6vw,5rem); font-weight:900; line-height:1.1; margin-top:20px; }
 .hero h1 span { color:#00e5ff; }
-.hero p { margin-top:25px; font-size:1.4rem; opacity:0.85; max-width:900px; margin-inline:auto; }
+.hero p { margin-top:25px; font-size:1.3rem; max-width:900px; opacity:0.85; }
 .hero .cta { margin-top:50px; }
 .hero a {
   padding:20px 50px; border-radius:60px;
@@ -34,26 +29,26 @@ body { background:#020617; color:#fff; overflow-x:hidden; }
 .hero a:hover { transform:scale(1.1); box-shadow:0 0 60px #00e5ff,0 0 100px #0066ff; }
 
 /* ===== SECTIONS ===== */
-section { max-width:1400px; margin:auto; padding:100px 20px; position:relative; z-index:1; }
-section h2 { font-size:3rem; font-weight:900; margin-bottom:20px; text-align:center; }
+section { max-width:1200px; margin:auto; padding:100px 20px; position:relative; z-index:1; }
+section h2 { font-size:2.8rem; font-weight:900; margin-bottom:20px; text-align:center; }
 section h2 span { color:#00e5ff; }
-section p { opacity:0.85; max-width:1000px; line-height:1.8; margin:0 auto; text-align:center; }
+section p { opacity:0.85; max-width:1000px; margin:0 auto 40px auto; text-align:center; }
 
 /* ===== CARDS ===== */
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:50px; margin-top:80px; }
-.card { background:rgba(255,255,255,0.07); backdrop-filter:blur(15px); padding:50px; border-radius:30px; transition:.5s; position:relative; overflow:hidden; opacity:0; transform:translateY(50px); animation:fadeUp 1s forwards; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:50px; }
+.card { background:rgba(255,255,255,0.08); backdrop-filter:blur(15px); padding:30px; border-radius:25px; transition:.5s; position:relative; overflow:hidden; opacity:0; transform:translateY(50px); animation:fadeUp 1s forwards; }
 .card img { width:100%; border-radius:20px; margin-bottom:20px; transition:.5s; }
 .card:hover { transform:translateY(-15px) scale(1.03); box-shadow:0 15px 50px rgba(0,229,255,0.3);}
-.card h3 { margin-bottom:15px; color:#00e5ff; font-size:1.7rem; }
+.card h3 { margin-bottom:15px; color:#00e5ff; font-size:1.6rem; }
 .card p { line-height:1.7; opacity:0.9; }
 
-/* ===== DEMONSTRAÇÃO ===== */
-.showcase { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:40px; margin-top:60px; }
-.showcase img { width:100%; border-radius:25px; transition:.5s; opacity:0; transform:scale(0.9); animation:fadeUp 1s forwards;}
-.showcase img:hover { transform:scale(1.08); }
+/* ===== CONTATO ===== */
+.contact { text-align:center; margin-top:80px; }
+.contact a { display:inline-block; margin:15px; padding:18px 40px; border-radius:50px; background:linear-gradient(135deg,#00e5ff,#0066ff); color:#020617; font-weight:700; text-decoration:none; font-size:1.1rem; transition:.3s; box-shadow:0 0 20px #00e5ff;}
+.contact a:hover { transform:scale(1.08); box-shadow:0 0 50px #00e5ff; }
 
 /* ===== FOOTER ===== */
-footer { padding:80px 20px; text-align:center; opacity:0.8; font-size:0.95rem; z-index:1; position:relative; }
+footer { padding:80px 20px; text-align:center; opacity:0.8; font-size:0.95rem; }
 
 /* ===== ANIMAÇÕES ===== */
 @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
@@ -61,21 +56,15 @@ footer { padding:80px 20px; text-align:center; opacity:0.8; font-size:0.95rem; z
 </head>
 <body>
 
-<!-- PARTICLES -->
-<div id="particles"></div>
-
 <!-- HERO -->
 <div class="hero">
-  <div>
-    <img src="logo.png" alt="Biosites Profissional">
-    <h1><span>Biosites</span> Profissional</h1>
-    <p>
-      Transformo pequenas empresas e perfis digitais em marcas premium.  
-      Criação de Bio Sites, Sites Profissionais e Edição de Vídeo sem gravação no local.
-    </p>
-    <div class="cta">
-      <a href="https://wa.me/5561996213467" target="_blank">Falar comigo no WhatsApp</a>
-    </div>
+  <img src="logo.png" alt="Biosites Profissional">
+  <h1><span>Biosites</span> Profissional</h1>
+  <p>
+    Transformo pequenas empresas e perfis digitais em marcas premium. Criação de Bio Sites, Sites Profissionais e Edição de Vídeo sem gravação no local.
+  </p>
+  <div class="cta">
+    <a href="https://wa.me/5561996213467" target="_blank">Falar comigo no WhatsApp</a>
   </div>
 </div>
 
@@ -90,66 +79,42 @@ footer { padding:80px 20px; text-align:center; opacity:0.8; font-size:0.95rem; z
 <!-- SERVIÇOS -->
 <section>
   <h2>O que eu <span>faço</span></h2>
-  <div class="grid">
+  <div class="cards">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443ff9" alt="Bio Sites">
+      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c443ff9?auto=format&fit=crop&w=800&q=80" alt="Bio Sites">
       <h3>🚀 Bio Sites Estratégicos</h3>
       <p>Links inteligentes e responsivos para Instagram, TikTok e WhatsApp. Conversão e design premium em cada detalhe.</p>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Video Maker">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Video Maker">
       <h3>🎥 Video Maker Premium</h3>
-      <p>Vídeos criativos, impactantes e prontos para viralizar. Não gravo no local, tudo é edição profissional digital.</p>
+      <p>Vídeos criativos, impactantes e prontos para viralizar. Não gravo no local, toda produção é feita digitalmente.</p>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Sites Profissionais">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Sites Profissionais">
       <h3>🌐 Sites Profissionais</h3>
       <p>Sites modernos, animados, responsivos, visual premium. Transformo empresas pequenas em referências digitais.</p>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786" alt="Posicionamento Digital">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80" alt="Posicionamento Digital">
       <h3>📈 Posicionamento Digital</h3>
       <p>Presença online, autoridade e crescimento orgânico. Construa uma marca memorável e confiável.</p>
     </div>
   </div>
 </section>
 
-<!-- DEMONSTRAÇÃO -->
-<section>
-  <h2>Exemplos de <span>trabalho</span></h2>
-  <div class="showcase">
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Exemplo 1">
-    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Exemplo 2">
-    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Exemplo 3">
-  </div>
-</section>
-
 <!-- CONTATO -->
-<section>
+<section class="contact">
   <h2>Vamos criar algo <span>grande</span></h2>
-  <p>
-    📞 WhatsApp: <a href="https://wa.me/5561996213467" style="color:#00e5ff;">(61) 99621-3467</a> <br>
-    📸 Instagram: <a href="https://www.instagram.com/biosites.profissional" target="_blank" style="color:#00e5ff;">@biosites.profissional</a>
-  </p>
+  <p>Entre em contato e transforme sua marca:</p>
+  <a href="https://wa.me/5561996213467" target="_blank">WhatsApp: (61) 99621-3467</a>
+  <a href="https://www.instagram.com/biosites.profissional" target="_blank">Instagram: @biosites.profissional</a>
 </section>
 
+<!-- FOOTER -->
 <footer>
 © 2026 • Biosites Profissional • Todos os direitos reservados
 </footer>
-
-<script>
-// PARTICLES
-const numParticles = 50;
-const container = document.getElementById('particles');
-for(let i=0;i<numParticles;i++){
-  const p = document.createElement('div');
-  p.classList.add('particle');
-  p.style.left = Math.random()*100+'vw';
-  p.style.width = p.style.height = 5 + Math.random()*20+'px';
-  p.style.animationDuration = 20 + Math.random()*15+'s';
-  container.appendChild(p);
-}
-</script>
 
 </body>
 </html>
