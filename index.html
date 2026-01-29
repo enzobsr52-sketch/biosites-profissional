@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biosites Profissional</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #0a2cff, #020617);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* FUNDO ANIMADO */
+    .bg-animation span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: rgba(255,255,255,0.15);
+      animation: float 20s linear infinite;
+      border-radius: 50%;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0); }
+      100% { transform: translateY(-10vh) scale(1); }
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeDown 1.2s ease;
+    }
+
+    header img {
+      width: 160px;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-top: 20px;
+      font-weight: 800;
+    }
+
+    h1 span {
+      color: #00e5ff;
+    }
+
+    p.subtitle {
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      transition: transform .4s, box-shadow .4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #00e5ff;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 80px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 18px 40px;
+      background: linear-gradient(135deg, #00e5ff, #0066ff);
+      color: #020617;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .cta a:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px #00e5ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FUNDO ANIMADO -->
+  <div class="bg-animation">
+    <span style="left:10%; animation-duration: 18s;"></span>
+    <span style="left:30%; animation-duration: 22s;"></span>
+    <span style="left:50%; animation-duration: 25s;"></span>
+    <span style="left:70%; animation-duration: 19s;"></span>
+    <span style="left:90%; animation-duration: 30s;"></span>
+  </div>
+
+  <header>
+    <!-- LOGO (depois vamos trocar pela sua) -->
+    <img src="logo.png" alt="Biosites Profissional">
+    <h1><span>Biosites</span> Profissionais</h1>
+    <p class="subtitle">
+      Sites modernos, animados e estratégicos para quem quer vender mais e parecer grande.
+    </p>
+  </header>
+
+  <section>
+    <div class="cards">
+      <div class="card">
+        <h3>🚀 Biosites Premium</h3>
+        <p>
+          Links inteligentes, design profissional e foco total em conversão para Instagram, TikTok e WhatsApp.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎥 Edição de Vídeo</h3>
+        <p>
+          Vídeos impactantes, criativos e prontos para viralizar. Não filmo no local, mas edito pesado.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📈 Posicionamento Digital</h3>
+        <p>
+          Estratégia, presença online e autoridade digital para seu negócio crescer de verdade.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💎 Sites Profissionais</h3>
+        <p>
+          Sites rápidos, responsivos e com visual de empresa grande, feitos para converter clientes.
+        </p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="https://wa.me/61996213467" target="_blank">
+        Falar comigo no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 • Biosites Profissional • Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
